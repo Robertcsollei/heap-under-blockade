@@ -11,13 +11,15 @@ function Home(){
     useEffect(() => { 
         
         const fetchData = async () => {
-          
+          //Get all questions
           const url = `${process.env.REACT_APP_API}/question`;
           const response = await fetch(url);
           const data = await response.json();
-          console.log(data)
+
+            //array to filter out duplicates
             let tempQst: Array<Post> = []
          data.map(async (getQuestionDetails: Questions) => {
+             //For each question get the category and the User
              const catUrl = `${process.env.REACT_APP_API}/category/${getQuestionDetails.Categoryid}`
              const userUrl = `${process.env.REACT_APP_API}/user/${getQuestionDetails.UserId}`
 
@@ -27,6 +29,7 @@ function Home(){
              const userRes = await fetch(userUrl)
              const userData = await userRes.json()
             
+            //type conflict explained in Category.tsx -> 31 - 32 
             //@ts-ignore
             let diffTime = Math.abs(new Date().getTime() - new Date(Date.parse(getQuestionDetails.PostDate)).getTime())
             let difference =  diffTime / (1000 * 3600 * 24)
@@ -48,6 +51,7 @@ function Home(){
                 Votes: getQuestionDetails.Votes                
 
              }
+             //explained in Category.tsx -> 58
              if(!tempQst.includes(Post)){
                 tempQst.push(Post)
             }
@@ -64,8 +68,9 @@ function Home(){
         <>
  <h2>All Posts</h2>
         
+        {/* Card object are reused troughout the app for displaying posts */}
         {posts && (
-
+            
             <Card posts={posts} />
 
         )}

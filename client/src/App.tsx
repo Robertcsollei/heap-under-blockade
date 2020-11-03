@@ -23,6 +23,7 @@ function App() {
       <Nav/>
 
       <Switch>
+        {/* Routes */}
         <div className="container content">
           <Route path="/" exact component={Home} />
           <Route path="/Profile/:user_id" component={User} />

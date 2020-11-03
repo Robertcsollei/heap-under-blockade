@@ -10,7 +10,6 @@ module.exports = () => {
     
      router.post('/category', category.category_post_new);
   
-  
     router.patch('/category/:category_id', category.category_patch);
   
     router.delete('/category/:category_id', category.category_delete);

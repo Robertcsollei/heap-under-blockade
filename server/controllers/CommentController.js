@@ -9,6 +9,7 @@ const questionModel = require("../models/question")
 exports.comment_post_new = (req, res) => {
     let questionId = req.params.question_id
 
+    //first check if the user exists who have posted the comment, if it does, contimues to find and return the comment
     userModel.findById(req.body.user_id)
     .then(user => {
         if(!user){
@@ -29,7 +30,7 @@ exports.comment_post_new = (req, res) => {
     })
 
     comment.save()
-
+    //also pushes the comment id to the question on which it exists
     questionModel.findById(questionId)
     .exec()
     .then(qst => {
@@ -78,7 +79,7 @@ exports.comment_post_new = (req, res) => {
 }
 
 
-
+//get all comments by a specific user
 exports.comment_get_all_byUser = (req,res) =>{
     let userComments = []
     questionModel.find()
@@ -115,6 +116,7 @@ exports.comment_patch = (req, res) => {
   })
 }
 
+//Update the Vote state on the Comment object - being called on every vote change
 exports.comment_modify_voted = (req, res) => {
     const id = req.params.comment_id;
     let value = 0

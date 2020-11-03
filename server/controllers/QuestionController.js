@@ -29,6 +29,7 @@ exports.question_get_byid = (req, res) => {
     })
 } 
 
+//Get all questions which share the same Category
 exports.question_get_byCat = (req, res) => {
 questionModel.find({Categoryid: req.params.category_id})
 .exec()
@@ -54,6 +55,7 @@ exports.question_patch = (req, res, next) => {
     })
 }
 
+//Adds / Substracts from the Votes 
 exports.question_modify_votes = (req, res) => {
     const id = req.params.question_id;
     let value = 0
@@ -77,6 +79,7 @@ exports.question_modify_votes = (req, res) => {
     })
 }
 
+//Check if the user who posts the question, and the question category exists. Than creates a new question in the DB
 exports.question_post_new = (req, res) => {
 
     categoryModel.findById(req.body.category_id)

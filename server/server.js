@@ -1,3 +1,4 @@
+//Initializing server
 const appName = "Server API"; 
 const port = process.env.PORT || 8080;
 const createServer = require("./app");

@@ -8,12 +8,14 @@ const morgan = require('morgan');
 const cors = require('cors');
 var mongoose = require('mongoose');
 
+/**** link to route files ****/
 const questionRoutes = require("./routes/questionRoutes")();
 const userRoutes = require("./routes/userRoutes")();
 const roleRoutes = require("./routes/roleRoutes")();
 const categoryRoutes = require("./routes/categoryRoutes")();
 const commentRoutes = require("./routes/commentRoutes")();
 
+/**** MongoDB connection string ****/
 let baseUrl = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@heapunderblockade.yjepg.mongodb.net/questions?retryWrites=true&w=majority`
 
 mongoose.connect(baseUrl ,{ useNewUrlParser: true, useUnifiedTopology: true }, function (err){

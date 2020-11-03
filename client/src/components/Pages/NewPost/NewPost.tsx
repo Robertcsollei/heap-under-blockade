@@ -8,7 +8,8 @@ const { register, handleSubmit, errors } = useForm(); // initialize the hook
 const [categories, setCategories] = useState<Array<Categories>>()
 const [visible, setVisible] = useState(false)
     
-const onSubmit = async (data: any) => {
+const onSubmit = async (data: any, e:any) => {
+    //creates new object on submit and sends it to the server
     data.tags = data.tags.split(",")
     let newPost = {
         ...data,
@@ -27,7 +28,11 @@ const onSubmit = async (data: any) => {
     });
     console.log(res)
 
+    //makes the modal visible
     setVisible(v => v = true)
+
+    //resets the form
+    e.target.reset()
 
 };
 

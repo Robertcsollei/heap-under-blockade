@@ -7,6 +7,7 @@ const { register, handleSubmit, errors } = useForm(); // initialize the hook
 
 
 const onSubmit = async (data: resComment) => {
+    //Post new comment
     let newComment = {
         ...data,
         images: [],
@@ -23,7 +24,7 @@ const onSubmit = async (data: resComment) => {
     });
     console.log(res)
     props.setCounter([1])
-
+    
 };
 
 
