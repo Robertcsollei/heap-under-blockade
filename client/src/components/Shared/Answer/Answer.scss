@@ -1,0 +1,23 @@
+.answer{
+
+    width: 60%;
+    @include flexbox;
+    @include flex-direction(column)
+
+    & * {
+        margin: 5px
+    }
+    .textField{
+        height: 100px;
+        padding: 10px;
+    }
+    .title{
+        height: 25px;
+        padding: 10px;
+    }
+    
+    .submit{
+        height: 30px;
+    }
+
+}

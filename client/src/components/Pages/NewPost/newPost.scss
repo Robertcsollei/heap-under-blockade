@@ -1,0 +1,25 @@
+.confiramtion{
+    width: 350px;
+    height: 200px;
+    background-color: $primary;
+    position: absolute;
+    @extend %center;
+    @include flex-direction(column);
+    margin: 50px 250px;
+    transition: $tf;
+
+    > h4{
+        color: $light;
+        margin: 10px;
+    }
+     p{
+         
+         color: $light;
+     }
+
+     
+}
+.hide{
+    display: none;
+
+}

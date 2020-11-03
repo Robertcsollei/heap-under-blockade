@@ -1,0 +1,41 @@
+.head{
+    @include flexbox;
+    @include align-items(center);
+    .profileImage{
+        width: 55px;
+        height: 55px;
+        overflow: hidden;
+        border-radius: 5px;
+        padding: 5px;
+        border: $primaryBorder;
+        transition: $tf;
+        
+    
+        > img{
+            margin-left: -25px ;
+            margin-top: -5px;
+            min-height: 130%;
+            max-height: 130%;
+        }
+        &:hover{
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        
+    }
+    .profile_name{
+        margin-left: 25px;
+        @include title();
+    }
+}
+
+.details{
+
+    .detail-item{
+        @include button;
+    }
+     
+    > p {
+        margin: 5px;
+    }
+}

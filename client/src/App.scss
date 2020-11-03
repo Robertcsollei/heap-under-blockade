@@ -1,0 +1,10 @@
+//This file is where all the component elemnts are imported to. has no other purpose just to 
+//collect the SCSS files which could be compiled to one CSS
+@import './flexbox.scss';
+@import './init.scss';
+@import './components/Shared/Nav/Nav.scss';
+@import './components/Shared/Card/Card.scss';
+@import './components/Shared/Comment/Comment.scss';
+@import './components/Shared/Answer/Answer.scss';
+@import './components//Pages/NewPost/newPost.scss';
+@import './components/Pages/User/User.scss';

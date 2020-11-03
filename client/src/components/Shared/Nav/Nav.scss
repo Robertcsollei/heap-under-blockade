@@ -1,0 +1,47 @@
+.nav{
+    width: 100%;
+    height: 60px;
+    @include flexbox;
+    @include justify-content(center);   
+    background-color: $primary;
+    position: fixed;
+    z-index: 10 ;
+    .NavHeader{
+        width: 150px;
+       
+        .LogoLink{
+            height: 100%;
+            @extend %center;
+            > .logo{
+                max-width: 150px;
+            }
+        }
+
+        .Title{
+            @include link;
+        }
+    
+    }
+
+    .NavLinks{
+        @include flexbox();
+        @include justify-content(space-between);
+        width: 30%;
+
+        > li {
+            @extend %fill;
+            
+            
+            .nav_link-item{
+                @extend %fill;
+                @extend %center;
+                @include link;
+                transition: $tf;
+                &:hover{
+                    background-color:$warning;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
