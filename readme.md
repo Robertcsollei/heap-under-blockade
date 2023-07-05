@@ -1,5 +1,8 @@
 # MERN template project
 
+## disclaimer
+This is a school project based on a template provided in the assignment.
+
 ## Introduction
 This project is a template for building full-stack JavaScript applications running on node.js. The technology stack is as follows:
 - **React** for the front-end, bootstrapped with "Create React App".
